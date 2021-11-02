@@ -11,15 +11,6 @@ number_of_files = len(png_files)
 number_of_files_test = number_of_files//5
 number_of_files_valid = number_of_files//5
 
-ind_valid = []
-ind_test = []
-ind_train = []
-
-for i in range(0, number_of_files_valid):
-    print(png_files[i])
-
-for i in range(number_of_files_valid, number_of_files_valid + number_of_files_test):
-    print(png_files[i])
-
-for i in range(number_of_files_valid + number_of_files_test, number_of_files):
-    print(png_files[i])
+files_valid = sorted(png_files[0:number_of_files_valid])
+files_test = sorted(png_files[number_of_files_valid:number_of_files_valid + number_of_files_test])
+files_train = sorted(png_files[number_of_files_valid + number_of_files_test:number_of_files])

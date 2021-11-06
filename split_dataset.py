@@ -32,9 +32,9 @@ for fl in files_train:
 if os.path.isdir(test_path):
     shutil.rmtree(test_path)
 
-os.mkdir(valid_path)
-for fl in files_valid:
-    shutil.copy2(os.path.join(copy_path, fl) , valid_path)
+os.mkdir(test_path)
+for fl in files_test:
+    shutil.copy2(os.path.join(copy_path, fl) , test_path)
 
 if os.path.isdir(valid_path):
     shutil.rmtree(valid_path)

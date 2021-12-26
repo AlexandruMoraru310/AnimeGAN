@@ -27,18 +27,18 @@ if os.path.isdir(train_path):
 
 os.mkdir(train_path)
 for fl in files_train:
-    shutil.copy2(os.path.join(copy_path, fl) , train_path)
+    shutil.copy2(os.path.join(copy_path, fl), train_path)
 
 if os.path.isdir(test_path):
     shutil.rmtree(test_path)
 
 os.mkdir(test_path)
 for fl in files_test:
-    shutil.copy2(os.path.join(copy_path, fl) , test_path)
+    shutil.copy2(os.path.join(copy_path, fl), test_path)
 
 if os.path.isdir(valid_path):
     shutil.rmtree(valid_path)
 
 os.mkdir(valid_path)
 for fl in files_valid:
-    shutil.copy2(os.path.join(copy_path, fl) , valid_path)
+    shutil.copy2(os.path.join(copy_path, fl), valid_path)

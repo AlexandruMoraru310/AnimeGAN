@@ -1,6 +1,7 @@
 import os
 import shutil
 import numpy as np
+import pandas as pd
 import cv2 as cv
 
 
@@ -9,7 +10,7 @@ dest_folder = "/home/alexandru/data/AnimeGAN_small"
 clean_folder = "/home/alexandru/data/AnimeGAN_clean"
 subfolders = ["train", "test", "valid"]
 
-save_for_cleaning = True
+save_for_cleaning = False
 
 
 border = 45
@@ -20,7 +21,9 @@ for sb in subfolders:
     source_path = os.path.join(source_folder, sb)
     dest_path = os.path.join(dest_folder, sb)
     path_for_clean = os.path.join(clean_folder, sb)
-    all_files = sorted(os.listdir(source_path))
+    all_files = pd.read_excel(
+        "./selected_files.xlsx", sheet_name=sb, header=0, verbose=False
+    ).squeeze("columns").to_list()
     if os.path.isdir(dest_path):
         shutil.rmtree(dest_path)
     os.mkdir(dest_path)
